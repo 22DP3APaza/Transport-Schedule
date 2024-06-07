@@ -30,7 +30,7 @@ This project is a web application that provides public transport schedules. It i
 1. **Clone the repository**
 
     ```bash
-    git clone https://github.com/yourusername/public-transport-schedules.git
+    git clone https://github.com/22DP3APaza/Transport-Schedule
     cd public-transport-schedules
     ```
 
