@@ -31,27 +31,26 @@
     <div class='middle'>
         <div class="form-box">
             <div class="form-value">
-                <form action="">
+                <form action="{{ route('searchRoute') }}" method="POST">
+                    @csrf
                     <h2 class='title'>Publisko transportu saraksti</h2>
                     <div class='inputbox'>
-                        <input type="text" placeholder="No">
+                        <input type="text" name="from" placeholder="No" required>
                     </div>
                     <div class='inputbox'>
-                        <input type="text" placeholder="Uz">
+                        <input type="text" name="to" placeholder="Uz" required>
                     </div>
                     <button type="submit" class="btn">Submit</button>
-
                 </form>
             </div>
         </div>
+    </div>
 
 
         </div>
     </div>
-    <div class="bg">
-        <div class="row m-0 p-2">
-            
-        </div>
+    <div class='container'>
+
     </div>
 </body>
 </html>

@@ -19,6 +19,7 @@ return new class extends Migration
             $table->timestamps();
 
             $table->foreign('route_id')->references('route_id')->on('routes')->onDelete('cascade');
+            $table->foreign('service_id')->references('service_id')->on('calendar')->onDelete('cascade');
         });
     }
 

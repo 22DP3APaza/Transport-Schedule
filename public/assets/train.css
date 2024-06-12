@@ -110,3 +110,6 @@ button{
     border: none;
     outline: none;
 }
+ul li a.login{
+    color: rgb(23, 23, 111);
+}

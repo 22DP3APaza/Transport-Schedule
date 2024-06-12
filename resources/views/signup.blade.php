@@ -39,7 +39,9 @@
             <div class='input-box'>
                 <input type="password" class="input-field" placeholder="Password" name="password">
             </div>
-
+            <div class='input-box'>
+                <input type="password" class="input-field" placeholder="Confirm Password" name="password_confirmation">
+            </div>
             <div class="forgot">
             </div>
             <div class="input-submit">

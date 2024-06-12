@@ -37,24 +37,26 @@ class Authentification extends Controller
         return redirect(route('signin'))->with('Error','Nepareizi ievadīts epasts vai parole.');
     }
 
-    function signupPost(Request $request){
+    function signupPost(Request $request) {
         $data = $request->validate([
-            'username' => 'required',
-            'email' => 'required|email|unique:users',
-            'password' => 'required|min:8'
+          'username' => 'required',
+          'email' => 'required|email|unique:users',
+          'password' => 'required|min:8',
+          'password_confirmation' => 'required|same:password', 
         ], [
-            'password.min' => 'Parolei jābūt vismaz 8 rakstzīmju garumā.'
+          'password.min' => 'Password must be 8 charachters long',
+          'password_confirmation.same' => 'Passwords must match',
         ]);
 
         // Hash the password before saving
         $data['password'] = Hash::make($data['password']);
 
         $user = User::create($data);
-        if(!$user){
-            return redirect(route('signup'))->with('error', 'Reģistrēšanās neizdevās, meiģiniet vēlreiz.');
+        if (!$user) {
+          return redirect(route('signup'))->with('error', 'Reģistrēšanās neizdevās, meiģiniet vēlreiz.');
         }
         return redirect(route('signin'))->with('success', 'Reģistrācija izdevusies, lūdzu ielagojaties');
-    }
+      }
 
     function logout(){
         Session::flush();

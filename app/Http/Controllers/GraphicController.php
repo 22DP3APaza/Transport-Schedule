@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 use App\imports\stoptimesImport;
+use App\imports\stopsImport;
+use App\imports\routesImport;
+use App\imports\tripsImport;
+use App\imports\calendarImport;
 use Illuminate\Http\Request;
 use Maatwebsite\Excel\Facades\Excel;
 

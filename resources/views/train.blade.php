@@ -20,26 +20,30 @@
             @guest
             <li><a href="/signin" class='login'>Login</a></li>
             @endguest
+            <li class = 'navbar-text'>@auth{{auth()->user()->name}} @endauth
+            @auth
+            <a href="/logout" id="signout">Sign Out </a>
+            @endauth
         </ul>
 
     </header>
     <div class='middle'>
         <div class="form-box">
             <div class="form-value">
-                <form action="">
+                <form action="{{ route('searchRoute') }}" method="POST">
+                    @csrf
                     <h2 class='title'>Publisko transportu saraksti</h2>
                     <div class='inputbox'>
-                        <input type="text" placeholder="No">
+                        <input type="text" name="from" placeholder="No" required>
                     </div>
                     <div class='inputbox'>
-                        <input type="text" placeholder="Uz">
+                        <input type="text" name="to" placeholder="Uz" required>
                     </div>
                     <button type="submit" class="btn">Submit</button>
-
                 </form>
             </div>
         </div>
-
+    </div>
 
         </div>
     </div>
